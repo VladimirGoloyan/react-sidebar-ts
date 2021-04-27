@@ -1,18 +1,59 @@
-.app-header {
+@import '../../styles/colors';
+
+.app-todos-header {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
   height: 7%;
-  background-color: #fff4ee;
+  background-color: $background-color;
 
   &__buttons {
-    width: 90%;
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 1%;
     display: flex;
     justify-content: space-around;
+
+    &__reset {
+      background-color: $background-color !important;
+      font-size: 1.5vh !important;
+      padding: 1% !important;
+
+      &:hover {
+        background-color: $accent2-color !important;
+        color: $background-color !important;
+      }
+    }
+
+    &__create {
+      background-color: $background-color !important;
+      font-size: 1.5vh !important;
+      padding: 1% !important;
+
+      &:hover {
+        background-color: $accent2-color !important;
+        color: $background-color !important;
+      }
+    }
+
+    &__del-rand {
+      background-color: $background-color !important;
+      font-size: 1.5vh !important;
+      padding: 1% !important;
+
+      &:hover {
+        background-color: $delete-color !important;
+        color: $background-color !important;
+      }
+    }
   }
 
   &__counter {
     width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
   }
 }
 .app-todos {
@@ -20,7 +61,7 @@
   overflow-y: scroll;
   display: flex;
   align-items: center;
-  justify-content: space-between ;
+  justify-content: space-between;
   flex-direction: column;
-  background-color: #fff4ee;
+  background-color: $background-color;
 }

@@ -7,7 +7,7 @@ import {
 } from "actions/todoActions";
 import fbService from "api/service";
 
-import Todo from "components/Todo/Todo";
+import Todo from "containers/Todo/Todo";
 import Counter from "components/Counter/Counter";
 import Loader from "components/Loader/Loader";
 import { Button } from "@material-ui/core";
@@ -18,7 +18,7 @@ const Todos = (props) => {
   useEffect(() => {
     if(!props.todos)
       props.setReduxTodos();
-  }, []);
+  }, [props]);
 
   const resetTodos = () => {
     fbService.pushTodos();
@@ -41,13 +41,13 @@ const Todos = (props) => {
 
   return (
     <>
-      <div className="app-header">
-        <div className="app-header__buttons">
-          <Button onClick={resetTodos}> Reset todos </Button>
-          <Button onClick={createTodo}> Create todo </Button>
-          <Button onClick={() => deleteTodo(getRandom())}>Delete random</Button>
+      <div className="app-todos-header">
+        <div className="app-todos-header__buttons">
+          <Button onClick={resetTodos} className="app-todos-header__buttons__reset"> Reset todos </Button>
+          <Button onClick={createTodo} className="app-todos-header__buttons__create"> Create todo </Button>
+          <Button onClick={() => deleteTodo(getRandom())} className="app-todos-header__buttons__del-rand">Delete random</Button>
         </div>
-        <div className="app-header__counter">
+        <div className="app-todos-header__counter">
           <Counter count={props.todos && props.todos.length} />
         </div>
       </div>

@@ -1,5 +1,7 @@
+@import '../../styles/colors';
+
 .app-loader {
-  background: #eb824e;
+  background: $accent-color;
 
   &__container {
     width: 250px;
@@ -13,7 +15,7 @@
     font-family: helvetica, arial, sans-serif;
     text-transform: uppercase;
     font-weight: 900;
-    color: #865FD0;
+    color: $accent2-color;
     letter-spacing: 0.2em;
 
     &::before,
@@ -22,7 +24,7 @@
       display: block;
       width: 15px;
       height: 15px;
-      background: #eb824e;
+      background:$accent-color;
       position: absolute;
       animation: load 0.7s infinite alternate ease-in-out;
     }
