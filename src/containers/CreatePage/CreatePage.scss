@@ -1,0 +1,18 @@
+.app-todo-create {
+  height: 100%;
+  background-color: #fff4ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__form {
+    height: 30%;
+    width: 20%;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+}

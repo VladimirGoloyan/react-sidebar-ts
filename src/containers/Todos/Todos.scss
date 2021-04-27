@@ -1,0 +1,26 @@
+.app-header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  height: 7%;
+  background-color: #fff4ee;
+
+  &__buttons {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__counter {
+    width: 10%;
+  }
+}
+.app-todos {
+  height: 93%;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: space-between ;
+  flex-direction: column;
+  background-color: #fff4ee;
+}
