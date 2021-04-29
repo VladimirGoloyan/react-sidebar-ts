@@ -1,10 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
+
+import { NavLink as RouterNavLink } from "react-router-dom";
 
 import "./NavLink.scss";
 
-import { NavLink as RouterNavLink } from "react-router-dom";
-const NavLink = ({ children, to }) => {
+interface Props{
+  to:string
+}
+
+const NavLink:React.FC<Props> = ({ children, to }) => {
   return (
     <RouterNavLink
       exact
@@ -16,9 +20,5 @@ const NavLink = ({ children, to }) => {
     </RouterNavLink>
   );
 };
-
-NavLink.propTypes = {
-    to: PropTypes.string.isRequired
-}
 
 export default NavLink;

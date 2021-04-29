@@ -1,14 +1,23 @@
-import React from "react";
+import React, { ChangeEventHandler } from "react";
 import PropTypes from "prop-types";
 
 import "./Input.scss";
 
-const Input = ({
+interface Props {
+  value?:string,
+  type?:string,
+  onChange:()=>void,
+  className?:string,
+  placeholder?:string,
+  onBlur:()=>void,
+  focus:()=>void
+}
+
+const Input: React.FC<Props> = ({
   value,
   type = "text",
   children,
   onChange,
-  className = "",
   placeholder = "Enter text",
   onBlur,
   focus
@@ -18,7 +27,7 @@ const Input = ({
       value={value}
       type={type}
       onChange={onChange}
-      className={(className, "app-input")}
+      className={( "app-input")}
       placeholder={placeholder}
       onBlur={onBlur}
       ref={focus}
