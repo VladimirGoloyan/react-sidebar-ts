@@ -2,7 +2,7 @@
 
 .app-todos-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
   height: 64px;
   background-color: $background-color;
@@ -10,7 +10,7 @@
   &__buttons {
     width: 80%;
     margin-left: 10%;
-    padding-top: 1%;
+    padding: 1% 0;
     display: flex;
     justify-content: space-around;
 

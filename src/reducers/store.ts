@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, Store } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import reduxThunk from "redux-thunk";
 import todosReducer from "./todosReducer";
@@ -7,7 +7,7 @@ import todosReducer from "./todosReducer";
 //   todos: null
 // };
 
-const initialState = configureStore({
+const initialState:Store | any = configureStore({
   reducer: {
     todos: Array,
   },

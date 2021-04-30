@@ -31,16 +31,34 @@
     width: 30%;
 
     &__complete {
-      background-color: $background-color !important;
-      font-size: 1.5vh !important;
-      width: 40% !important;
+      background-color: $background-color;
+      font-size: 1.5vh;
+      width: 40%;
+      height: 6vh;
+      border-radius: 20px;
+      text-transform: uppercase;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $accent2-color;
+        color: $background-color;
+      }
     }
 
     &__incomplete {
-      background-color: $accent2-color !important;
-      color: $background-color !important;
-      font-size: 1.5vh !important;
-      width: 40% !important;
+      background-color: $accent2-color;
+      color: $background-color;
+      font-size: 1.5vh;
+      width: 40%;
+      height: 6vh;
+      border-radius: 20px;
+      text-transform: uppercase;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $background-color;
+        color: black;
+      }
     }
   }
 
@@ -50,12 +68,16 @@
     width: 30%;
 
     &__button {
-      width: 40% !important;
-      font-size: 1.5vh !important;
+      width: 40%;
+      font-size: 1.5vh;
+      height: 6vh;
+      border-radius: 20px;
+      text-transform: uppercase;
+      transition: 0.3s;
 
       &:hover {
-        background-color: $background-color !important;
-        color: $delete-color !important;
+        background-color: $delete-color;
+        color: $background-color;
       }
     }
   }

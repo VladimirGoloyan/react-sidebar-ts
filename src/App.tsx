@@ -6,17 +6,20 @@ import { store } from "reducers/store";
 import AppRouter from "routes/AppRouter";
 import Sidebar from "components/Sidebar/Sidebar";
 import Layout from "components/Layout/Layout";
+import MainContent from "components/MainContent/MainContent";
 
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Layout>
-          <Sidebar />
+    <BrowserRouter>
+      <Layout>
+        <Sidebar />
+        <MainContent>
           <AppRouter />
-        </Layout>
-      </BrowserRouter>
-    </Provider>
+        </MainContent>
+      </Layout>
+    </BrowserRouter>
+  </Provider>
   );
 };
 
