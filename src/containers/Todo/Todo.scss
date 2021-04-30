@@ -1,62 +1,62 @@
-@import '../../styles/colors';
+@import "../../styles/colors";
 
-.app-todo{
-    width: 60%;
-    height: 15%;
-    min-height: 90px;
-    border-radius: 10px;
-    padding: 1%;
-    margin: 1%;
-    background-color: $accent-color;
+.app-todo {
+  width: 60%;
+  height: 15%;
+  min-height: 90px;
+  border-radius: 10px;
+  padding: 1%;
+  margin: 1%;
+  background-color: $accent-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+  &__title {
+    text-align: center;
+    cursor: pointer;
+    width: 40%;
+    font-size: 2vh;
+    overflow: hidden;
+
+    &:hover {
+      color: $background-color;
+    }
+  }
+
+  &__is-complete {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
+    justify-content: center;
+    width: 30%;
 
-    &__title{
-        text-align: center;
-        cursor: pointer;
-        width: 40%;
-        font-size: 2vh;
-        overflow: hidden;
-        
-        &:hover{
-            color: $background-color;
-        }
+    &__complete {
+      background-color: $background-color !important;
+      font-size: 1.5vh !important;
+      width: 40% !important;
     }
 
-    &__is-complete{
-        display: flex;
-        justify-content: center;
-        width: 30%;
-        
-        &__complete{
-            background-color:$background-color !important; 
-            font-size: 1.5vh !important;
-            width: 40% !important;
-        }
-        
-        &__incomplete{
-            background-color: $accent2-color !important;
-            color: $background-color !important;
-            font-size: 1.5vh !important;
-            width: 40% !important;
-         }
+    &__incomplete {
+      background-color: $accent2-color !important;
+      color: $background-color !important;
+      font-size: 1.5vh !important;
+      width: 40% !important;
     }
+  }
 
-    &__delete{
-        display: flex;
-        justify-content: center;
-        width: 30%;
+  &__delete {
+    display: flex;
+    justify-content: center;
+    width: 30%;
 
-        &__button{
-            width: 40% !important;
-            font-size: 1.5vh !important;
-            
-            &:hover{
-                background-color: $background-color !important;
-                color: $delete-color !important;
-            }
-        }
+    &__button {
+      width: 40% !important;
+      font-size: 1.5vh !important;
+
+      &:hover {
+        background-color: $background-color !important;
+        color: $delete-color !important;
+      }
     }
+  }
 }

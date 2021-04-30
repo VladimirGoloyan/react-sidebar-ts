@@ -1,10 +1,10 @@
 import { actionTypesRedux } from "reducers/actionTypesRedux";
-
+import type { AppDispatch } from "../reducers/store";
 import fbService from "api/service";
 
-export const setReduxTodos = () => (dispatch) => {
+export const setReduxTodos = () => (dispatch: AppDispatch) => {
   fbService
-    .getAllItems('todos')
+    .getAllItems("todos")
     .then((data) => {
       dispatch({
         type: actionTypesRedux.SET_TODOS,
@@ -18,8 +18,7 @@ export const setReduxTodos = () => (dispatch) => {
     });
 };
 
-
-export const createReduxTodo = (todo) => (dispatch) => {
+export const createReduxTodo = (todo: object) => (dispatch: AppDispatch) => {
   fbService.createItem(todo, "todos").then((data) => {
     dispatch({
       type: actionTypesRedux.CREATE_TODO,
@@ -30,8 +29,8 @@ export const createReduxTodo = (todo) => (dispatch) => {
   });
 };
 
-export const deleteReduxTodo = (id) => (dispatch) => {
-  console.log('starting delete')
+export const deleteReduxTodo = (id: number) => (dispatch: AppDispatch) => {
+  console.log("starting delete");
   fbService.deleteItem(id, "todos").then(() => {
     fbService.getAllItems("todos").then((data) => {
       dispatch({
@@ -44,7 +43,7 @@ export const deleteReduxTodo = (id) => (dispatch) => {
   });
 };
 
-export const updateReduxTodo = (newTodo) => (dispatch, getState) => {
+export const updateReduxTodo = (newTodo: object) => (dispatch: AppDispatch) => {
   fbService.updateItem(newTodo, "todos").then((data) => {
     setReduxTodos();
     dispatch({
@@ -55,4 +54,3 @@ export const updateReduxTodo = (newTodo) => (dispatch, getState) => {
     });
   });
 };
-

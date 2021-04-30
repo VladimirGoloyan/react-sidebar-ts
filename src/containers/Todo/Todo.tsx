@@ -1,12 +1,22 @@
 import React, { useState, useRef} from "react";
 import fbService from "api/service";
 
-import Button from "@material-ui/core/button";
+//import Button from "@material-ui/core/button";
+import Button from "components/Button/Button";
 
-import "./Todo.scss";
 import Input from "components/Input/Input";
 
-const Todo = ({ title, completed, remove, item }) => {
+import "./Todo.scss";
+
+interface ITodoProps{
+  title:string,
+  completed:boolean,
+  className?:string
+  remove: React.MouseEventHandler<HTMLButtonElement>,
+  item:object
+}
+
+const Todo:React.FC<ITodoProps> = ({ title, completed, className='', remove, item }) => {
   const inputRef = useRef()
 
   const [state,setState] = useState({
@@ -31,12 +41,16 @@ const Todo = ({ title, completed, remove, item }) => {
 
   const setInput = () => {
     setState({...state, edit:!edit});
-    setTimeout(()=>{
-      inputRef.current.focus()
-    },0)
+    if(inputRef !== undefined){
+      //inputRef.current.focus()
+    }
+    
+    // setTimeout(()=>{
+    //   inputRef.current.focus()
+    // },0)
   };
   
-  const changeValue = (e) => {
+  const changeValue = (e:React.ChangeEvent<HTMLInputElement>) => {
     setState({...state,editTitle:e.target.value})
   }
 

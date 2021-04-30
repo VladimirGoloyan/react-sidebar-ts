@@ -2,11 +2,13 @@ import firebase from "firebase/app";
 import firebaseConfig from "./firebaseConfig";
 import "firebase/database";
 
-import todosMockup from 'data-mockup/todos-mockup';
+import todosMockup from "data-mockup/todos-mockup";
 
 class fbService {
+  baseUrl: string;
   constructor() {
-    this.baseUrl = "https://react-sidebar-todo-list-default-rtdb.firebaseio.com";
+    this.baseUrl =
+      "https://react-sidebar-todo-list-default-rtdb.firebaseio.com";
     if (firebase.apps.length === 0) firebase.initializeApp(firebaseConfig);
   }
 
@@ -14,37 +16,40 @@ class fbService {
     firebase.database().ref("/todos").set(todosMockup);
   }
 
-  getAllItems = async (path) => {
+  getAllItems = async (path: string) => {
     const allPosts = await firebase.database().ref(path).get();
-    const data = allPosts.toJSON();
+    const data: Object | any = allPosts.toJSON();
     return Object.values(data);
   };
 
-  getItem = async (id, path) => {
+  getItem = async (id: number, path: string) => {
     const res = await firebase.database().ref(`${path}/${id}`).get();
     return res.toJSON();
   };
 
-  getItems = async (startAt = 0, endAt = 4, path) => {
-    const res = await firebase
-      .database()
-      .ref(path)
-      .orderByKey()
-      .startAt(startAt.toString())
-      .endAt(endAt.toString())
-      .get();
-    const data = res.toJSON();
-    return Object.values(data);
-  };
+  // getItems = async (startAt:number, endAt:number, path:string) => {
+  //   const res = await firebase
+  //     .database()
+  //     .ref(path)
+  //     .orderByKey()
+  //     .startAt(startAt.toString())
+  //     .endAt(endAt.toString())
+  //     .get();
+  //   const data = res.toJSON();
+  //   return Object.values(data);
+  // };
 
-  updateItem = async (itemData, path) => {
+  updateItem = async (
+    itemData: { completed?: boolean; title?: string; id?: number },
+    path: string
+  ) => {
     const postRef = firebase.database().ref(`${path}/${itemData.id}`);
     await postRef.update(itemData);
     const res = await postRef.get();
     return res.val();
   };
 
-  deleteItem = async (id, path) => {
+  deleteItem = async (id: number, path: string) => {
     const itemRef = firebase.database().ref(`${path}/${id}`);
     await itemRef.remove();
     const items = await this.getAllItems(path);
@@ -52,7 +57,7 @@ class fbService {
       .database()
       .ref(path)
       .set(
-        items.map((el, idx) => {
+        items.map((el: object | any, idx) => {
           return {
             ...el,
             id: idx,
@@ -61,15 +66,15 @@ class fbService {
       );
   };
 
-  createItem = async (itemData, path) => {
+  createItem = async (itemData: Object, path: string) => {
     const res = await firebase
       .database()
       .ref(path)
       .orderByKey()
       .limitToLast(1)
       .get();
-    const lastItemJson = res.toJSON();
-    const lastItem = Object.values(lastItemJson)[0];
+    const lastItemJson: Object | any = res.toJSON();
+    const lastItem: { id: number } | any = Object.values(lastItemJson)[0];
     const { id } = lastItem;
     console.log(id);
     const newItem = {

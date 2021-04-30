@@ -4,9 +4,8 @@ import { Provider } from "react-redux";
 import { store } from "reducers/store";
 
 import AppRouter from "routes/AppRouter";
-import Sidebar from "components/Sidebar/Sidebar.js";
+import Sidebar from "components/Sidebar/Sidebar";
 import Layout from "components/Layout/Layout";
-import Content from "components/Content/Content";
 
 const App: React.FC = () => {
   return (
@@ -14,9 +13,7 @@ const App: React.FC = () => {
       <BrowserRouter>
         <Layout>
           <Sidebar />
-          <Content>
-            <AppRouter />
-          </Content>
+          <AppRouter />
         </Layout>
       </BrowserRouter>
     </Provider>

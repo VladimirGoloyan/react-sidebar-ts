@@ -6,6 +6,6 @@ const firebaseConfig = {
   storageBucket: "react-sidebar-todo-list.appspot.com",
   messagingSenderId: "656050480100",
   appId: "1:656050480100:web:3f2a11194df4f3cc721df1",
-  measurementId: "G-992P82778B"
+  measurementId: "G-992P82778B",
 };
 export default firebaseConfig;

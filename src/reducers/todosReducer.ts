@@ -1,6 +1,8 @@
+import { Action, Reducer } from "redux";
 import { actionTypesRedux } from "./actionTypesRedux";
+import { RootState } from "./store";
 
-const reducer = (state = null, action) => {
+const reducer:Reducer<{ todos: Array<Object>; }, any> = (state:any, action) => {
   switch (action.type) {
     case actionTypesRedux.SET_TODOS:
       console.log(action);
@@ -8,7 +10,7 @@ const reducer = (state = null, action) => {
 
     case actionTypesRedux.UPDATE_TODO:
       console.log(action);
-      return [...state];
+      return [...state.todos];
 
     case actionTypesRedux.CREATE_TODO:
       console.log(action);
@@ -17,7 +19,7 @@ const reducer = (state = null, action) => {
 
     case actionTypesRedux.DELETE_TODO:
       console.log(action);
-      return state.filter((el) => {
+      return state.todos.filter((el:object|any) => {
         return el.id !== action.payload.id;
       });
 

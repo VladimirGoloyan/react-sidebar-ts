@@ -1,25 +1,26 @@
-@import '../../styles/colors';
-.app-home{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    background-color: $background-color;
+@import "../../styles/colors";
 
-    &__title{
-        font-size: 5vh;
-        text-align: center;
+.app-home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: $background-color;
+
+  &__title {
+    font-size: 5vh;
+    text-align: center;
+  }
+
+  &__button {
+    background-color: $background-color !important;
+    font-size: 1.5vh !important;
+    padding: 1% !important;
+
+    &:hover {
+      background-color: $accent2-color !important;
+      color: $background-color !important;
     }
-
-    &__button{
-        background-color: $background-color !important;
-      font-size: 1.5vh !important;
-      padding: 1% !important;
-
-      &:hover {
-        background-color: $accent2-color !important;
-        color: $background-color !important;
-      }
-    }
+  }
 }

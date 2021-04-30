@@ -1,4 +1,4 @@
-@import '../../styles/colors';
+@import "../../styles/colors";
 
 .app-loader {
   background: $accent-color;
@@ -24,7 +24,7 @@
       display: block;
       width: 15px;
       height: 15px;
-      background:$accent-color;
+      background: $accent-color;
       position: absolute;
       animation: load 0.7s infinite alternate ease-in-out;
     }

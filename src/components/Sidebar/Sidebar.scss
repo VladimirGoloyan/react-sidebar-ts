@@ -8,7 +8,7 @@
   align-items: center;
   flex-direction: column;
 
-  &__container{
+  &__container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -16,14 +16,14 @@
     height: 45%;
   }
 
-  &__item{
+  &__item {
     margin-top: 50%;
   }
 
-  &__icon{
-    transition: all .12s ease-in-out;
+  &__icon {
+    transition: all 0.12s ease-in-out;
 
-    &:hover{
+    &:hover {
       transform: scale(1.5);
     }
   }

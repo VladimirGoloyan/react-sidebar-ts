@@ -4,11 +4,7 @@ import { NavLink as RouterNavLink } from "react-router-dom";
 
 import "./NavLink.scss";
 
-interface Props{
-  to:string
-}
-
-const NavLink:React.FC<Props> = ({ children, to }) => {
+const NavLink: React.FC<{ to: string }> = ({ children, to }) => {
   return (
     <RouterNavLink
       exact

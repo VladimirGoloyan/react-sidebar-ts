@@ -1,16 +1,15 @@
-import React, { ChangeEventHandler } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 
 import "./Input.scss";
 
 interface Props {
-  value?:string,
-  type?:string,
-  onChange:()=>void,
-  className?:string,
-  placeholder?:string,
-  onBlur:()=>void,
-  focus:()=>void
+  value: string;
+  type?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
+  placeholder?: string;
+  onBlur?: () => void;
+  focus?: React.MutableRefObject<undefined> | any;
 }
 
 const Input: React.FC<Props> = ({
@@ -19,15 +18,15 @@ const Input: React.FC<Props> = ({
   children,
   onChange,
   placeholder = "Enter text",
-  onBlur,
-  focus
+  onBlur = () => {},
+  focus = () => {},
 }) => {
   return (
     <input
       value={value}
       type={type}
       onChange={onChange}
-      className={( "app-input")}
+      className=""
       placeholder={placeholder}
       onBlur={onBlur}
       ref={focus}
@@ -35,13 +34,6 @@ const Input: React.FC<Props> = ({
       {children}
     </input>
   );
-};
-
-Input.propTypes = {
-  type: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  placeholder: PropTypes.string,
 };
 
 export default Input;
