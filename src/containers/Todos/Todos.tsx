@@ -30,7 +30,6 @@ const Todos = (props: any) => {
   };
 
   const createTodo = () => {
-    console.log("pushing history");
     props.history.push("/todo-create");
   };
 

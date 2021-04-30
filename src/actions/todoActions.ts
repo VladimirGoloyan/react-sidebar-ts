@@ -30,7 +30,6 @@ export const createReduxTodo = (todo: object) => (dispatch: AppDispatch) => {
 };
 
 export const deleteReduxTodo = (id: number) => (dispatch: AppDispatch) => {
-  console.log("starting delete");
   fbService.deleteItem(id, "todos").then(() => {
     fbService.getAllItems("todos").then((data) => {
       dispatch({

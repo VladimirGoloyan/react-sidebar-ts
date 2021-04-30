@@ -3,10 +3,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import reduxThunk from "redux-thunk";
 import todosReducer from "./todosReducer";
 
-// const initialState = {
-//   todos: null
-// };
-
 const initialState:Store | any = configureStore({
   reducer: {
     todos: Array,

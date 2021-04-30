@@ -27,18 +27,6 @@ class fbService {
     return res.toJSON();
   };
 
-  // getItems = async (startAt:number, endAt:number, path:string) => {
-  //   const res = await firebase
-  //     .database()
-  //     .ref(path)
-  //     .orderByKey()
-  //     .startAt(startAt.toString())
-  //     .endAt(endAt.toString())
-  //     .get();
-  //   const data = res.toJSON();
-  //   return Object.values(data);
-  // };
-
   updateItem = async (
     itemData: { completed?: boolean; title?: string; id?: number },
     path: string
@@ -76,7 +64,6 @@ class fbService {
     const lastItemJson: Object | any = res.toJSON();
     const lastItem: { id: number } | any = Object.values(lastItemJson)[0];
     const { id } = lastItem;
-    console.log(id);
     const newItem = {
       ...itemData,
       id: id + 1,
